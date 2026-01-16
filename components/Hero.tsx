@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-bg.png"
+          src="/images/portada-principal.png"
           alt="Ingeniería Ambiental en Infraestructura"
           fill
           className="object-cover"

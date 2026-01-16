@@ -11,7 +11,7 @@ export default function ServicesGrid() {
       title: 'Gestión Silvicultural Urbana',
       subtitle: 'Talas de Alto Riesgo',
       desc: 'Intervención experta en entornos complejos. Equipo certificado para trabajo en alturas y manejo de especies protegidas.',
-      image: '/images/service-silviculture.png',
+      image: '/images/tala1.png',
       highlight: true,
     },
     {
@@ -19,7 +19,7 @@ export default function ServicesGrid() {
       title: 'Restauración Ecológica',
       subtitle: 'Compensación Ambiental',
       desc: 'Diseño y ejecución de planes de restauración. Recuperación de ecosistemas degradados con base científica.',
-      image: '/images/service-restoration.png',
+      image: '/images/servicios1.png',
       highlight: false,
     },
     {
@@ -27,7 +27,7 @@ export default function ServicesGrid() {
       title: 'Trámites y Licenciamiento',
       subtitle: 'Seguridad Jurídica',
       desc: 'Gestión integral de permisos ante autoridades ambientales (CVC, DAGMA, ANLA). Evite sanciones.',
-      image: '/images/service-licensing.png',
+      image: '/images/servicios2.png',
       highlight: false,
     },
     {
@@ -35,7 +35,7 @@ export default function ServicesGrid() {
       title: 'Gestión Social',
       subtitle: 'Infraestructura',
       desc: 'Socialización de proyectos, actas de vecindad y resolución de conflictos comunitarios para viabilizar obras.',
-      image: '/images/service-social.png',
+      image: '/images/servicios3.png',
       highlight: false,
     },
   ];
