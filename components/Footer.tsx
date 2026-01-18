@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="relative h-10 w-40 mb-6 bg-white/5 rounded p-1">
                <Image
-                src="/images/conga-logo.png"
+                src="/images/logo-conga-dark.png"
                 alt="CONGA PACIFICO"
                 fill
                 className="object-contain"

@@ -21,14 +21,14 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-primary shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="relative h-16 w-56">
           <Image
-            src="/images/logo.png"
+            src="/images/logo-conga-dark.png"
             alt="CONGA PACIFICO Logo"
             fill
             className="object-contain object-left"
@@ -42,9 +42,7 @@ export default function Header() {
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`font-heading font-medium hover:text-accent transition-colors ${
-                isScrolled ? 'text-slate-800' : 'text-white'
-              }`}
+              className="font-heading font-medium hover:text-accent transition-colors text-white"
             >
               {item}
             </Link>
@@ -62,7 +60,7 @@ export default function Header() {
           className="md:hidden text-accent"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} color={isScrolled ? '#1B4D3E' : '#FFFFFF'} />}
+          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} color="#FFFFFF" />}
         </button>
       </div>
 
