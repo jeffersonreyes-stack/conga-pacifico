@@ -1,6 +1,7 @@
 'use client';
 
 import { MapPin, Layers, FileText, Activity } from 'lucide-react';
+import Image from 'next/image';
 
 export default function TechEvidence() {
   return (
@@ -63,58 +64,14 @@ export default function TechEvidence() {
               </div>
 
               {/* Map Interface Area */}
-              <div className="relative h-[400px] bg-slate-900 w-full group">
-                 {/* Stylized Map Elements */}
-                 <div className="absolute inset-0 opacity-30" style={{
-                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-                    backgroundSize: '40px 40px'
-                 }}></div>
-
-                 {/* Map Nodes */}
-                 {[
-                   { top: '30%', left: '40%', status: 'success' },
-                   { top: '50%', left: '60%', status: 'warning' },
-                   { top: '20%', left: '70%', status: 'success' },
-                   { top: '70%', left: '30%', status: 'alert' },
-                   { top: '60%', left: '80%', status: 'success' },
-                 ].map((node, i) => (
-                   <div
-                    key={i}
-                    className="absolute cursor-pointer transform hover:scale-125 transition-transform"
-                    style={{ top: node.top, left: node.left }}
-                   >
-                     <div className={`w-4 h-4 rounded-full border-2 border-white shadow-[0_0_15px_rgba(255,255,255,0.5)] ${
-                       node.status === 'success' ? 'bg-green-500 shadow-green-500/50' :
-                       node.status === 'warning' ? 'bg-yellow-500 shadow-yellow-500/50' : 'bg-red-600 shadow-red-600/50'
-                     }`}></div>
-                     {/* Tooltip Simulation */}
-                     <div className="absolute left-6 top-0 bg-slate-900 border border-slate-600 p-2 rounded w-32 opacity-0 hover:opacity-100 transition-opacity pointer-events-none z-20">
-                        <div className="h-1 w-12 bg-slate-700 mb-1"></div>
-                        <div className="h-1 w-8 bg-slate-700"></div>
-                     </div>
-                   </div>
-                 ))}
-
-                 {/* Floating UI Panel */}
-                 <div className="absolute top-4 right-4 w-48 bg-slate-900/90 backdrop-blur border border-slate-700 rounded p-3 text-xs space-y-2">
-                    <div className="flex justify-between text-slate-400">
-                      <span>Progreso Total</span>
-                      <span className="text-white">87%</span>
-                    </div>
-                    <div className="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                      <div className="bg-accent h-full w-[87%]"></div>
-                    </div>
-                    <div className="pt-2 border-t border-slate-700">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                        <span className="text-slate-300">Aprobado</span>
-                      </div>
-                      <div className="flex items-center space-x-2 mt-1">
-                        <div className="w-2 h-2 rounded-full bg-red-600"></div>
-                        <span className="text-slate-300">Riesgo Alto</span>
-                      </div>
-                    </div>
-                 </div>
+              <div className="relative h-[400px] bg-slate-900 w-full group overflow-hidden">
+                 <Image
+                   src="/images/dashboard-georeferenciacion.png"
+                   alt="Dashboard de Georreferenciación CONGA - Control de Proyectos"
+                   fill
+                   className="object-contain"
+                   sizes="(max-width: 768px) 100vw, 50vw"
+                 />
               </div>
             </div>
           </div>
