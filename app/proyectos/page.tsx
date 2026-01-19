@@ -6,22 +6,30 @@ import Image from 'next/image';
 export default function ProyectosPage() {
   const cases = [
     {
-      title: "Gestión en Entornos Urbanos de Alta Complejidad",
-      text: "En alianza con entidades locales, hemos gestionado el riesgo arbóreo en zonas densamente pobladas de Cali. Este reto demostró nuestra capacidad para armonizar la seguridad operativa con las expectativas de la comunidad, logrando intervenciones seguras y socialmente validadas que protegen la infraestructura pública y privada.",
+      title: "Gestión de Riesgo Urbano (Cali)",
+      ally: "Alcaldía de Cali / DAGMA / CVC (Convenio 0095).",
+      challenge: "Intervención de arbolado en riesgo en zonas de alta densidad urbana.",
+      solution: "Cuadrillas especializadas con equipos de altura (Res. 0312).",
+      results: [
+        "✅ 0 Accidentes de Trabajo.",
+        "✅ Georreferenciación Total.",
+        "✅ Paz Social (Sin conflictos)."
+      ],
       image: "/images/tala1.png",
-      alt: "Intervención arbórea urbana"
+      alt: "Gestión de Riesgo Urbano"
     },
     {
-      title: "Restauración Ecológica en Áreas Rurales",
-      text: "En la cuenca de la Quebrada Tanque Viejo (Dagua), lideramos procesos de restauración activa y conservación de fuentes hídricas. Mediante la implementación de viveros comunitarios y aislamientos estratégicos, logramos no solo metas ambientales, sino el fortalecimiento del tejido social, consolidando la confianza entre la comunidad y las entidades promotoras.",
-      image: "/images/servicios1.png", // Restoration
-      alt: "Restauración ecológica rural"
-    },
-    {
-      title: "Un Modelo Adaptable",
-      text: "Nuestra trayectoria demuestra versatilidad. Desde la precisión requerida en la silvicultura urbana hasta la visión a largo plazo de la restauración rural, CONGA PACÍFICO adapta su gestión a las necesidades específicas de cada territorio, asegurando siempre que la inversión ambiental contribuya positivamente al éxito global del proyecto.",
-      image: "/images/tala2.png", // Using another tala image as general fieldwork representation
-      alt: "Equipo técnico en campo"
+      title: "Restauración de Ecosistemas (Dagua)",
+      ally: "CVC (Convenio 0037).",
+      challenge: "Protección de fuentes hídricas en zona rural.",
+      solution: "Gestión integral del ciclo biológico y articulación comunitaria.",
+      results: [
+        "✅ 100% de Cumplimiento.",
+        "✅ Vivero Especializado.",
+        "✅ Apropiación Real (Comunidad vinculada)."
+      ],
+      image: "/images/servicios1.png",
+      alt: "Restauración de Ecosistemas"
     }
   ];
 
@@ -29,8 +37,8 @@ export default function ProyectosPage() {
     <main className="min-h-screen flex flex-col bg-slate-50">
       <Header />
       <SecondaryHero
-        title="Experiencia en Contextos Diversos"
-        subtitle="Resultados que demuestran nuestra capacidad de adaptación y compromiso con la calidad en entornos urbanos y rurales."
+        title="Trayectoria que Genera Confianza"
+        subtitle="Más de 24 años combinando precisión técnica y gestión social en el Pacífico colombiano."
       />
 
       <section className="py-20 container mx-auto px-4 md:px-8">
@@ -54,9 +62,29 @@ export default function ProyectosPage() {
                    Caso de Estudio {index + 1}
                 </div>
                 <h2 className="text-3xl font-heading font-bold text-primary mb-6">{project.title}</h2>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  {project.text}
-                </p>
+
+                <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
+                  <p>
+                    <span className="font-bold text-primary">Aliado:</span> {project.ally}
+                  </p>
+                  <p>
+                    <span className="font-bold text-primary">Desafío:</span> {project.challenge}
+                  </p>
+                  <p>
+                    <span className="font-bold text-primary">Solución:</span> {project.solution}
+                  </p>
+                  <div>
+                    <span className="font-bold text-primary block mb-2">Resultados:</span>
+                    <ul className="list-none space-y-1 pl-4">
+                      {project.results.map((result, idx) => (
+                        <li key={idx} className="flex items-center">
+                          {result}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
               </div>
             </div>
           ))}

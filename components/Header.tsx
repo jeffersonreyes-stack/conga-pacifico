@@ -38,20 +38,25 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {['Servicios', 'Seguridad', 'Tecnología', 'Proyectos'].map((item) => (
+          {[
+            { name: 'Inicio', path: '/' },
+            { name: 'Servicios', path: '/servicios' },
+            { name: 'Trazabilidad y Tecnología', path: '/tecnologia' },
+            { name: 'Experiencia', path: '/proyectos' },
+          ].map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
+              key={item.name}
+              href={item.path}
               className="font-heading font-medium hover:text-accent transition-colors text-white"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
           <Link
             href="/contacto"
             className="bg-accent hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg"
           >
-            Solicitar Evaluación Técnica
+            Contacto
           </Link>
         </nav>
 
@@ -74,14 +79,19 @@ export default function Header() {
             className="md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg overflow-hidden"
           >
             <nav className="flex flex-col p-4 space-y-4">
-              {['Servicios', 'Seguridad', 'Tecnología', 'Proyectos'].map((item) => (
+              {[
+                { name: 'Inicio', path: '/' },
+                { name: 'Servicios', path: '/servicios' },
+                { name: 'Trazabilidad y Tecnología', path: '/tecnologia' },
+                { name: 'Experiencia', path: '/proyectos' },
+              ].map((item) => (
                 <Link
-                  key={item}
-                  href={`/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
+                  key={item.name}
+                  href={item.path}
                   className="font-heading font-medium text-slate-800 hover:text-accent"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
               <Link
@@ -89,7 +99,7 @@ export default function Header() {
                 className="bg-accent text-white font-bold py-3 px-6 rounded-md text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Solicitar Evaluación Técnica
+                Contacto
               </Link>
             </nav>
           </motion.div>

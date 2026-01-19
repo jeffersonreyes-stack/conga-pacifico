@@ -1,8 +1,7 @@
-import SecondaryHero from '@/components/SecondaryHero';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import TechEvidence from '@/components/TechEvidence';
-import { MapPin, BarChart3, FileCheck } from 'lucide-react';
+import { MapPin, ShieldCheck, FileCheck } from 'lucide-react';
 
 export default function TecnologiaPage() {
   return (
@@ -17,10 +16,10 @@ export default function TecnologiaPage() {
          }}></div>
          <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
             <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-white">
-               Trazabilidad y Evidencia Técnica
+               Trazabilidad Digital y Transparencia Técnica
             </h1>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto font-light">
-               Información precisa para fortalecer la confianza entre los diferentes actores del proyecto.
+               En la era de los datos, la gestión ambiental debe ser auditable en tiempo real. En CONGA PACÍFICO hemos digitalizado nuestra operación para ofrecerle evidencia irrefutable y control total sobre sus inversiones ambientales.
             </p>
          </div>
       </section>
@@ -38,27 +37,27 @@ export default function TecnologiaPage() {
            {/* Feature 1 */}
            <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-accent transition-colors group">
               <MapPin className="w-12 h-12 text-accent mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold text-white mb-4">Georreferenciación y Control</h3>
+              <h3 className="text-2xl font-heading font-bold text-white mb-4">Georreferenciación de Precisión (GIS)</h3>
               <p className="text-slate-300 leading-relaxed">
-                 Utilizamos tecnología de posicionamiento global (GPS) para documentar cada intervención. Ya sea una poda urbana o una siembra rural, cada actividad queda registrada con coordenadas precisas, permitiendo una auditoría transparente y facilitando la presentación de informes ante las autoridades y la interventoría.
+                 Lo que no se mide y ubica, no existe. Documentamos cada intervención con coordenadas UTM precisas. Entregable: Archivos KMZ/KML compatibles con Google Earth Pro para auditoría remota.
               </p>
            </div>
 
            {/* Feature 2 */}
            <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-primary transition-colors group">
-              <BarChart3 className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold text-white mb-4">Visualización de Datos</h3>
+              <ShieldCheck className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-heading font-bold text-white mb-4">Digitalización de Seguridad (SST)</h3>
               <p className="text-slate-300 leading-relaxed">
-                 Transformamos los datos de campo en insumos valiosos para la toma de decisiones. Entregamos reportes compatibles con plataformas como Google Earth (archivos KMZ), lo que permite visualizar el avance físico de las compensaciones o intervenciones en tiempo real. Esta claridad en la información es fundamental para asegurar la correcta ejecución presupuestal y técnica.
+                 La seguridad industrial no es negociable. Migramos del papel a la nube con Checklists Digitales (ATS/Preoperacionales) con estampa de tiempo y GPS, eliminando errores y acelerando reportes HSEQ.
               </p>
            </div>
 
            {/* Feature 3 */}
            <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-accent transition-colors group">
               <FileCheck className="w-12 h-12 text-accent mb-6 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold text-white mb-4">Respaldo Documental</h3>
+              <h3 className="text-2xl font-heading font-bold text-white mb-4">Registro &quot;Antes, Durante y Después&quot;</h3>
               <p className="text-slate-300 leading-relaxed">
-                 Más allá de la ejecución física, garantizamos la integridad de la información. Nuestros sistemas de registro del "antes, durante y después" constituyen un soporte sólido que valida el cumplimiento de las crecientes expectativas sociales y normativas sobre la gestión ambiental del proyecto.
+                 Construimos una memoria técnica visual de cada actividad. Este acervo documental es su mejor respaldo ante requerimientos de las autoridades ambientales o consultas de la comunidad.
               </p>
            </div>
         </div>
