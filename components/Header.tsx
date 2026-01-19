@@ -41,14 +41,14 @@ export default function Header() {
           {['Servicios', 'Seguridad', 'Tecnología', 'Proyectos'].map((item) => (
             <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
               className="font-heading font-medium hover:text-accent transition-colors text-white"
             >
               {item}
             </Link>
           ))}
           <Link
-            href="#contacto"
+            href="/contacto"
             className="bg-accent hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg"
           >
             Solicitar Evaluación Técnica
@@ -77,7 +77,7 @@ export default function Header() {
               {['Servicios', 'Seguridad', 'Tecnología', 'Proyectos'].map((item) => (
                 <Link
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={`/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
                   className="font-heading font-medium text-slate-800 hover:text-accent"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -85,7 +85,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="#contacto"
+                href="/contacto"
                 className="bg-accent text-white font-bold py-3 px-6 rounded-md text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
