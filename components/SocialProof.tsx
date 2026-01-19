@@ -1,10 +1,10 @@
-import { Building2, Landmark, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
 
 export default function SocialProof() {
   const partners = [
-    { name: 'CVC', icon: <Landmark size={32} /> }, // Placeholder: Regional Environmental Authority
-    { name: 'DAGMA', icon: <ShieldCheck size={32} /> }, // Placeholder: Local Authority
-    { name: 'Alcaldía de Cali', icon: <Building2 size={32} /> }, // Placeholder: City Hall
+    { name: 'CVC', logo: '/images/logo-cvc.png', width: 120, height: 60 },
+    { name: 'DAGMA', logo: '/images/logo-dagma.png', width: 100, height: 50 },
+    { name: 'Alcaldía de Cali', logo: '/images/logo-alcaldia.png', width: 80, height: 80 },
   ];
 
   return (
@@ -13,15 +13,18 @@ export default function SocialProof() {
         <p className="text-center text-slate-400 font-heading text-sm uppercase tracking-widest mb-6">
           Entidades y Aliados que confían en nuestro rigor
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
           {partners.map((partner, index) => (
-            <div key={index} className="flex items-center space-x-3 group">
-              <div className="text-slate-500 group-hover:text-primary transition-colors">
-                {partner.icon}
+            <div key={index} className="relative group transition-all duration-300">
+              <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <Image
+                  src={partner.logo}
+                  alt={`Logo ${partner.name}`}
+                  width={partner.width}
+                  height={partner.height}
+                  className="object-contain h-16 w-auto"
+                />
               </div>
-              <span className="text-xl md:text-2xl font-heading font-bold text-slate-400 group-hover:text-slate-600 uppercase">
-                {partner.name}
-              </span>
             </div>
           ))}
         </div>
