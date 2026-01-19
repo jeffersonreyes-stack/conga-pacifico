@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -12,7 +13,7 @@ export default function ServicesGrid() {
       subtitle: 'Talas de Alto Riesgo',
       desc: 'Intervención experta en entornos complejos. Equipo certificado para trabajo en alturas y manejo de especies protegidas.',
       image: '/images/tala1.png',
-      highlight: true,
+      route: '/servicios/gestion-forestal',
     },
     {
       id: 'restoration',
@@ -20,7 +21,7 @@ export default function ServicesGrid() {
       subtitle: 'Compensación Ambiental',
       desc: 'Diseño y ejecución de planes de restauración. Recuperación de ecosistemas degradados con base científica.',
       image: '/images/servicios1.png',
-      highlight: false,
+      route: '/servicios/restauracion-ecologica',
     },
     {
       id: 'licensing',
@@ -28,7 +29,7 @@ export default function ServicesGrid() {
       subtitle: 'Seguridad Jurídica',
       desc: 'Gestión integral de permisos ante autoridades ambientales (CVC, DAGMA, ANLA). Evite sanciones.',
       image: '/images/servicios2.png',
-      highlight: false,
+      route: '/servicios/tramites-ambientales',
     },
     {
       id: 'social',
@@ -36,7 +37,7 @@ export default function ServicesGrid() {
       subtitle: 'Infraestructura',
       desc: 'Socialización de proyectos, actas de vecindad y resolución de conflictos comunitarios para viabilizar obras.',
       image: '/images/servicios3.png',
-      highlight: false,
+      route: '/servicios/gestion-social',
     },
   ];
 
@@ -65,37 +66,39 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-2xl transition-all duration-300 border border-slate-100 ${
-                service.highlight ? 'ring-2 ring-accent ring-offset-2' : ''
-              }`}
             >
-              <div className="relative h-64 w-full overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              <Link
+                href={service.route}
+                className="group relative block overflow-hidden rounded-xl bg-white transition-all duration-300 border-2 border-accent hover:shadow-xl hover:-translate-y-[5px]"
+              >
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
-                <div className="absolute bottom-0 left-0 p-6 w-full">
-                  <span className="text-xs font-bold text-accent uppercase tracking-wider mb-2 block">
-                    {service.subtitle}
-                  </span>
-                  <h3 className="text-xl font-heading font-bold text-white mb-2 leading-tight group-hover:text-accent transition-colors">
-                    {service.title}
-                  </h3>
+                  <div className="absolute bottom-0 left-0 p-6 w-full">
+                    <span className="text-xs font-bold text-accent uppercase tracking-wider mb-2 block">
+                      {service.subtitle}
+                    </span>
+                    <h3 className="text-xl font-heading font-bold text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+                      {service.title}
+                    </h3>
+                  </div>
                 </div>
-              </div>
 
-              <div className="p-6">
-                <p className="text-slate-600 text-sm mb-4 line-clamp-3">
-                  {service.desc}
-                </p>
-                <a href="#" className="text-primary font-bold text-sm hover:underline inline-flex items-center">
-                  Más información <ArrowRight className="ml-1 w-3 h-3" />
-                </a>
-              </div>
+                <div className="p-6">
+                  <p className="text-slate-600 text-sm mb-4 line-clamp-3">
+                    {service.desc}
+                  </p>
+                  <span className="text-primary font-bold text-sm hover:underline inline-flex items-center">
+                    Más información <ArrowRight className="ml-1 w-3 h-3" />
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
