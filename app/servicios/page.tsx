@@ -7,23 +7,23 @@ import LeadMagnet from '@/components/LeadMagnet';
 export default function ServiciosPage() {
   const services = [
     {
-      title: "Gestión de Trámites y Cumplimiento Normativo",
-      text: "Entendemos la diversidad de elementos regulatorios actuales. Realizamos la gestión integral de permisos ante las diferentes Corporaciones Autónomas Regionales y Entidades Ambientales competentes. Nuestro soporte abarca desde licencias y permisos de vertimientos hasta la gestión de aprovechamiento forestal, asegurando que su proyecto cumpla con los requisitos exigidos para evitar contratiempos administrativos.",
-      image: "/images/service-licensing.png"
-    },
-    {
-      title: "Intervención Silvicultural y Paisajismo Técnico",
-      text: "La excelencia en ingeniería requiere una planificación adecuada del entorno verde. Ejecutamos talas, podas y traslados con una planificación rigurosa que busca mitigar riesgos operativos y evitar sobrecostos por imprevistos. Transformamos áreas verdes en activos estéticos y funcionales que complementan la calidad de su infraestructura.",
-      image: "/images/service-silviculture.png"
-    },
-    {
-      title: "Compensaciones Ambientales Efectivas",
-      text: "Convertimos las obligaciones de compensación en oportunidades para fortalecer la sostenibilidad. Diseñamos y ejecutamos planes de restauración ecológica que no solo cumplen la norma, sino que generan confianza entre los actores involucrados y aportan valor real a los ecosistemas estratégicos.",
+      title: "Ejecución de Compensaciones Ambientales",
+      text: "Cumplimiento técnico que garantiza el cierre de expedientes. Diseñamos e implementamos medidas correctivas con altos estándares de supervivencia biológica. Incluye: Restauración Ecológica, Conservación Estratégica (aislamientos) y Monitoreo Técnico.",
       image: "/images/service-restoration.png"
     },
     {
+      title: "Paisajismo Ambiental y Restaurativo",
+      text: "Integración funcional entre obra gris y entorno verde. Más allá de la estética, creamos infraestructura verde resiliente. Especialistas en Bioingeniería para control de taludes, diseño funcional de corredores biológicos y mantenimiento técnico especializado.",
+      image: "/images/service-silviculture.png"
+    },
+    {
+      title: "Gestión de Trámites y Derechos Ambientales",
+      text: "Su departamento externo de ingeniería legal-ambiental. Actuamos como facilitadores técnicos para destrabar la operación. Gestión de concesiones de aguas, permisos de vertimientos, aprovechamiento forestal (CVC/DAGMA) y elaboración de DAA/PMA.",
+      image: "/images/service-licensing.png"
+    },
+    {
       title: "Gestión Social y Educación Ambiental",
-      text: "Fortalecemos el Goodwill de su empresa. A través de metodologías participativas y educación ambiental empresarial, construimos relaciones de confianza con las comunidades y stakeholders, facilitando la licencia social necesaria para la continuidad de sus actividades.",
+      text: "Licencia social para operar sin interrupciones. Mitigamos el riesgo reputacional articulando su proyecto con el territorio mediante talleres de apropiación con JAC, líderes locales y capacitación normativa para su personal.",
       image: "/images/service-social.png"
     }
   ];
@@ -32,8 +32,8 @@ export default function ServiciosPage() {
     <main className="min-h-screen flex flex-col bg-slate-50">
       <Header />
       <SecondaryHero
-        title="Soluciones Integrales para la Sostenibilidad del Proyecto"
-        subtitle="Acompañamiento técnico experto para navegar marcos normativos diversos y asegurar la viabilidad de sus operaciones."
+        title="Soluciones Ambientales Estratégicas para Infraestructura y Territorio"
+        subtitle="Transformamos sus obligaciones ambientales en activos de sostenibilidad. Integramos ingeniería civil, rigor ambiental y gestión social para asegurar la viabilidad de sus proyectos ante la ley y la comunidad."
       />
 
       <section className="py-20 container mx-auto px-4 md:px-8">
