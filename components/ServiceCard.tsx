@@ -10,12 +10,12 @@ interface ServiceCardProps {
 export default function ServiceCard({ title, description, imageSrc, imageAlt }: ServiceCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-slate-100 flex flex-col h-full">
-      <div className="relative h-64 w-full">
+      <div className="relative h-64 w-full bg-slate-900">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </div>
       <div className="p-8 flex-1 flex flex-col">
