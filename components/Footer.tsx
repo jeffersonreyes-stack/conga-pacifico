@@ -45,15 +45,15 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5" />
-                <span>Calle 123 # 45-67<br />Cali, Valle del Cauca</span>
+                <span>av 6N # 14N - 31<br />Cali, Valle del Cauca</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent" />
-                <span>+57 (602) 555 0000</span>
+                <span>+57 301 229 3970</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent" />
-                <span>contacto@congapacifico.com</span>
+                <span>congapacifico@gmail.com</span>
               </li>
             </ul>
           </div>
