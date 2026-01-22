@@ -40,8 +40,8 @@ export default function ContactoPage() {
                      </div>
                      <div>
                         <p className="text-sm text-slate-500 font-bold">Línea de Atención</p>
-                        <a href="tel:+573012293970" className="text-slate-800 hover:text-accent font-medium transition-colors">
-                           +57 301 229 3970
+                        <a href="tel:+573206963982" className="text-slate-800 hover:text-accent font-medium transition-colors">
+                           +57 320 6963982
                         </a>
                      </div>
                   </div>
