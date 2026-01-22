@@ -28,8 +28,8 @@ export default function ContactoPage() {
                      </div>
                      <div>
                         <p className="text-sm text-slate-500 font-bold">Correo Electrónico</p>
-                        <a href="mailto:info@congapacifico.com" className="text-slate-800 hover:text-accent font-medium transition-colors">
-                           info@congapacifico.com
+                        <a href="mailto:congapacifico@gmail.com" className="text-slate-800 hover:text-accent font-medium transition-colors">
+                           congapacifico@gmail.com
                         </a>
                      </div>
                   </div>
@@ -40,8 +40,8 @@ export default function ContactoPage() {
                      </div>
                      <div>
                         <p className="text-sm text-slate-500 font-bold">Línea de Atención</p>
-                        <a href="tel:+573001234567" className="text-slate-800 hover:text-accent font-medium transition-colors">
-                           +57 300 123 4567
+                        <a href="tel:+573012293970" className="text-slate-800 hover:text-accent font-medium transition-colors">
+                           +57 301 229 3970
                         </a>
                      </div>
                   </div>
@@ -53,7 +53,7 @@ export default function ContactoPage() {
                      <div>
                         <p className="text-sm text-slate-500 font-bold">Oficina Principal</p>
                         <p className="text-slate-800">
-                           Cali, Valle del Cauca<br/>Colombia
+                           av 6N # 14N - 31<br/>Cali, Valle del Cauca
                         </p>
                      </div>
                   </div>
