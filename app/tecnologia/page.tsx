@@ -1,12 +1,10 @@
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import TechEvidence from '@/components/TechEvidence';
 import { MapPin, ShieldCheck, FileCheck } from 'lucide-react';
 
 export default function TecnologiaPage() {
   return (
     <main className="min-h-screen flex flex-col bg-slate-900 text-white">
-      <Header />
 
       {/* Custom Hero for Tech Page to match dark theme */}
       <section className="relative py-24 bg-slate-900 text-white overflow-hidden mt-16 md:mt-20 border-b border-slate-800">

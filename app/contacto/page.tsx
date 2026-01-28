@@ -1,13 +1,11 @@
 import SecondaryHero from '@/components/SecondaryHero';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function ContactoPage() {
   return (
     <main className="min-h-screen flex flex-col bg-slate-50">
-      <Header />
       <SecondaryHero
         title="Contáctenos"
         subtitle="Estamos listos para ser su aliado estratégico. Cuéntenos sobre su proyecto."

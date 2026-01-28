@@ -13,8 +13,8 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md transition-all duration-300 py-4 shadow-md">
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-12 w-12 md:h-14 md:w-14">
+        <Link href="/" className="flex items-center gap-4 group">
+          <div className="relative h-20 w-20 md:h-24 md:w-24">
             <Image
               src="/images/logo-conga-dark-2.png"
               alt="CONGA PACIFICO Logo"
@@ -23,7 +23,7 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="font-heading font-bold text-white text-xl md:text-2xl group-hover:text-accent transition-colors tracking-tight">
+          <span className="font-heading font-bold text-white text-xl md:text-3xl group-hover:text-accent transition-colors tracking-tight">
             CONGA PACIFICO
           </span>
         </Link>

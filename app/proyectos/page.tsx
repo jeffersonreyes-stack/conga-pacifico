@@ -1,6 +1,5 @@
 import SecondaryHero from '@/components/SecondaryHero';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import Image from 'next/image';
 
 export default function ProyectosPage() {
@@ -35,7 +34,6 @@ export default function ProyectosPage() {
 
   return (
     <main className="min-h-screen flex flex-col bg-slate-50">
-      <Header />
       <SecondaryHero
         title="Trayectoria que Genera Confianza"
         subtitle="Más de 24 años combinando precisión técnica y gestión social en el Pacífico colombiano."
