@@ -1,12 +1,10 @@
 import SecondaryHero from '@/components/SecondaryHero';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import { ShieldCheck, HardHat, Activity } from 'lucide-react';
 
 export default function SeguridadPage() {
   return (
     <main className="min-h-screen flex flex-col bg-slate-50">
-      <Header />
       <SecondaryHero
         title="Cultura de Prevención y Excelencia Operativa"
         subtitle="Una adecuada planificación disminuye los riesgos y asegura la eficiencia financiera y operativa de cada intervención."

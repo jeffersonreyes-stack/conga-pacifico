@@ -10,13 +10,18 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div>
-            <div className="relative h-10 w-40 mb-6 bg-white/5 rounded p-1">
-               <Image
-                src="/images/logo-conga-dark.png"
-                alt="CONGA PACIFICO"
-                fill
-                className="object-contain"
-              />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="relative h-10 w-10">
+                <Image
+                  src="/images/logo-conga-dark-2.png"
+                  alt="CONGA PACIFICO"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="font-heading font-bold text-white text-lg tracking-tight">
+                CONGA PACIFICO
+              </span>
             </div>
             <p className="text-sm leading-relaxed mb-6">
               Ingeniería Ambiental y Gestión del Riesgo con altos estándares técnicos para el sector industrial y constructor.
@@ -49,7 +54,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent" />
-                <span>+57 301 229 3970</span>
+                <span>+57 320 6963982</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent" />

@@ -2,7 +2,6 @@ import SecondaryHero from '@/components/SecondaryHero';
 import Link from 'next/link';
 import ServiceCard from '@/components/ServiceCard';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import LeadMagnet from '@/components/LeadMagnet';
 
 export default function ServiciosPage() {
@@ -35,7 +34,6 @@ export default function ServiciosPage() {
 
   return (
     <main className="min-h-screen flex flex-col bg-slate-50">
-      <Header />
       <SecondaryHero
         title="Soluciones Integrales para la Sostenibilidad del Proyecto"
         subtitle="Acompañamiento técnico experto para navegar marcos normativos diversos y asegurar la viabilidad de sus operaciones."
