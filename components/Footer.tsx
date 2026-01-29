@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer id="contacto" className="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
           {/* Brand Column */}
           <div>
@@ -61,22 +61,6 @@ export default function Footer() {
                 <span>congapacifico@gmail.com</span>
               </li>
             </ul>
-          </div>
-
-          {/* Certifications (Placeholders) */}
-          <div>
-            <h4 className="text-white font-heading font-bold mb-6">Certificaciones</h4>
-            <div className="flex gap-4">
-              <div className="w-16 h-16 bg-white/10 rounded flex items-center justify-center text-xs text-center p-1 border border-white/20">
-                ISO 9001
-              </div>
-              <div className="w-16 h-16 bg-white/10 rounded flex items-center justify-center text-xs text-center p-1 border border-white/20">
-                ISO 14001
-              </div>
-              <div className="w-16 h-16 bg-white/10 rounded flex items-center justify-center text-xs text-center p-1 border border-white/20">
-                RUC
-              </div>
-            </div>
           </div>
         </div>
 
