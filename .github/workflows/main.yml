@@ -34,16 +34,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      # NOTA: La infraestructura (Terraform) se debe aplicar manualmente o tener un Backend remoto configurado.
+      # Por seguridad, este pipeline solo despliega el CÓDIGO (contenido) al bucket y limpia la caché.
+
       - name: Sync files to S3 bucket
-        # CAMBIO: Usamos 'out/' porque ahí es donde Next.js pone tu página web real
-        # CAMBIO: Usamos 'AWS_BUCKET_NAME' que es el secreto que sí tienes
+        # Sincroniza la carpeta 'out' (build de Next.js) con el bucket S3
         run: |
           aws s3 sync out/ s3://${{ secrets.AWS_BUCKET_NAME }} --delete
 
-      # ESTE PASO FALLARÁ SI NO TIENES EL SECRETO 'CLOUDFRONT_ID'
-      # Si no usas CloudFront todavía, borra estas líneas de abajo:
-      # - name: Invalidate CloudFront cache
-      #   run: |
-      #     aws cloudfront create-invalidation \
-      #       --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
-      #       --paths "/*"
+      - name: Invalidate CloudFront cache
+        # Borra la caché para que los cambios se vean inmediatamente
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
