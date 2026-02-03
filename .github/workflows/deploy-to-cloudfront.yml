@@ -38,29 +38,11 @@ jobs:
       
       - name: Deploy static site to S3
         run: |
-          # List out directory structure for debugging
-          echo "Build output structure:"
-          ls -la out/ 2>/dev/null || echo "out/ not found"
-          
-          # Sync all files from out/ to S3 (static export output)
-          aws s3 sync ./out s3://${{ secrets.AWS_BUCKET_NAME }} \
+          echo "📤 Syncing files to S3..."
+          aws s3 sync ./out s3://${{ secrets.AWS_BUCKET_NAME }}/ \
             --delete \
-            --cache-control "public, max-age=3600" \
-            --exclude ".git/*" \
-            --exclude "node_modules/*"
-          
-          # Set specific cache headers for static assets
-          aws s3 cp s3://${{ secrets.AWS_BUCKET_NAME }} s3://${{ secrets.AWS_BUCKET_NAME }} \
-            --recursive \
-            --exclude "*" \
-            --include "*.js" \
-            --include "*.css" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.gif" \
-            --include "*.svg" \
-            --cache-control "public, max-age=31536000, immutable" \
-            --metadata-directive COPY || true
+            --cache-control "public, max-age=3600"
+          echo "✅ Files synced to S3"
       
       - name: Invalidate CloudFront cache
         run: |
