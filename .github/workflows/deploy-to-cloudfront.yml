@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - conga-landing-page-*
 
 jobs:
   deploy:
