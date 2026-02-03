@@ -26,8 +26,6 @@ jobs:
       
       - name: Build Next.js project
         run: npm run build
-        env:
-          NEXT_PUBLIC_SITE_URL: https://d2ldmbozza14uy.cloudfront.net
       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
