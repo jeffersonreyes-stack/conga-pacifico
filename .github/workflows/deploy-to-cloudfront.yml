@@ -35,49 +35,41 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
-      - name: Sync Next.js public files to S3
+      - name: Deploy static site to S3
         run: |
-          aws s3 sync ./public s3://${{ secrets.S3_BUCKET_NAME }}/public \
-            --cache-control "public, max-age=31536000, immutable" \
-            --delete
-      
-      - name: Sync Next.js build output to S3
-        run: |
-          aws s3 sync ./.next/static s3://${{ secrets.S3_BUCKET_NAME }}/_next/static \
-            --cache-control "public, max-age=31536000, immutable" \
-            --delete
-      
-      - name: Deploy HTML pages to S3
-        run: |
-          aws s3 sync ./.next/standalone/.next/static s3://${{ secrets.S3_BUCKET_NAME }}/_next/static \
-            --cache-control "public, max-age=31536000, immutable" \
-            --delete || true
+          # List out directory structure for debugging
+          echo "Build output structure:"
+          ls -la out/ 2>/dev/null || echo "out/ not found"
           
-          # Upload all HTML files with short cache control
-          find .next -name "*.html" -type f | while read file; do
-            s3_path="${file#./}"
-            aws s3 cp "$file" "s3://${{ secrets.S3_BUCKET_NAME }}/$s3_path" \
-              --cache-control "public, max-age=3600" \
-              --content-type "text/html"
-          done
-      
-      - name: Sync entire .next/static directory
-        run: |
-          if [ -d ".next/static" ]; then
-            aws s3 sync ./.next/static s3://${{ secrets.S3_BUCKET_NAME }}/_next/static \
-              --cache-control "public, max-age=31536000, immutable" \
-              --delete
-          fi
+          # Sync all files from out/ to S3 (static export output)
+          aws s3 sync ./out s3://${{ secrets.AWS_BUCKET_NAME }} \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude ".git/*" \
+            --exclude "node_modules/*"
+          
+          # Set specific cache headers for static assets
+          aws s3 cp s3://${{ secrets.AWS_BUCKET_NAME }} s3://${{ secrets.AWS_BUCKET_NAME }} \
+            --recursive \
+            --exclude "*" \
+            --include "*.js" \
+            --include "*.css" \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.gif" \
+            --include "*.svg" \
+            --cache-control "public, max-age=31536000, immutable" \
+            --metadata-directive COPY || true
       
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
             --paths "/*"
       
       - name: Print deployment info
         run: |
           echo "✅ Deployment completed successfully!"
           echo "🌐 Site URL: https://d2ldmbozza14uy.cloudfront.net"
-          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_NAME }}"
-          echo "🔄 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
+          echo "📦 S3 Bucket: ${{ secrets.AWS_BUCKET_NAME }}"
+          echo "🔄 CloudFront Distribution: ${{ secrets.CLOUDFRONT_ID }}"
