@@ -16,6 +16,25 @@ resource "aws_cloudfront_origin_access_control" "default" {
   signing_protocol                  = "sigv4"
 }
 
+# --- NEW: ACM Certificate ---
+resource "aws_acm_certificate" "cert" {
+  domain_name       = var.domain_name
+  validation_method = "DNS"
+
+  subject_alternative_names = [var.root_domain_name]
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  tags = {
+    Environment = "Production"
+    Project     = "CongaPacifico"
+    ManagedBy   = "Terraform"
+  }
+}
+# ----------------------------
+
 # 3. Create CloudFront Distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
@@ -27,6 +46,9 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
+
+  # Use alias only if custom domain is enabled
+  aliases = var.use_custom_domain ? [var.domain_name] : []
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -46,7 +68,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     max_ttl                = 86400
   }
 
-  # Custom Error Responses for SPA Routing (403/404 -> /index.html with 200 OK)
   custom_error_response {
     error_caching_min_ttl = 300
     error_code            = 403
@@ -68,7 +89,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = var.use_custom_domain ? false : true
+    acm_certificate_arn            = var.use_custom_domain ? aws_acm_certificate.cert.arn : null
+    ssl_support_method             = var.use_custom_domain ? "sni-only" : null
+    minimum_protocol_version       = var.use_custom_domain ? "TLSv1.2_2021" : null
   }
 
   tags = {
@@ -78,7 +102,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 # 4. Update S3 Bucket Policy
-# This allows CloudFront to access the S3 bucket using OAC
 resource "aws_s3_bucket_policy" "allow_access_from_cloudfront" {
   bucket = data.aws_s3_bucket.selected.id
   policy = data.aws_iam_policy_document.s3_policy.json
