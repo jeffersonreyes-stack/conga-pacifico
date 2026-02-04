@@ -26,8 +26,8 @@ export default function ContactoPage() {
                      </div>
                      <div>
                         <p className="text-sm text-slate-500 font-bold">Correo Electrónico</p>
-                        <a href="mailto:congapacifico@gmail.com" className="text-slate-800 hover:text-accent font-medium transition-colors">
-                           congapacifico@gmail.com
+                        <a href="mailto:proyectos@congapacifico.com" className="text-slate-800 hover:text-accent font-medium transition-colors">
+                           proyectos@congapacifico.com
                         </a>
                      </div>
                   </div>
