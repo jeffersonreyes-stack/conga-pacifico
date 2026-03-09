@@ -27,7 +27,7 @@ export default function ProyectosPage() {
         "✅ Vivero Especializado.",
         "✅ Apropiación Real (Comunidad vinculada)."
       ],
-      image: "/images/servicios1.png",
+      image: "/images/restauracion-ecologica.png",
       alt: "Restauración de Ecosistemas"
     }
   ];

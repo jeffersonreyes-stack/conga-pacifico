@@ -20,7 +20,7 @@ export default function ServicesGrid() {
       title: 'Restauración Ecológica',
       subtitle: 'Compensación Ambiental',
       desc: 'Diseño y ejecución de planes de restauración. Recuperación de ecosistemas degradados con base científica.',
-      image: '/images/servicios1.png',
+      image: '/images/restauracion-ecologica.png',
       route: '/servicios/restauracion-ecologica',
     },
     {
@@ -28,7 +28,7 @@ export default function ServicesGrid() {
       title: 'Trámites y Licenciamiento',
       subtitle: 'Seguridad Jurídica',
       desc: 'Gestión integral de permisos ante autoridades ambientales (CVC, DAGMA, ANLA). Evite sanciones.',
-      image: '/images/servicios2.png',
+      image: '/images/tramites-licenciamiento.png',
       route: '/servicios/tramites-ambientales',
     },
     {
@@ -36,7 +36,7 @@ export default function ServicesGrid() {
       title: 'Gestión Social',
       subtitle: 'Infraestructura',
       desc: 'Socialización de proyectos, actas de vecindad y resolución de conflictos comunitarios para viabilizar obras.',
-      image: '/images/servicios3.png',
+      image: '/images/gestion-social.jpeg',
       route: '/servicios/gestion-social',
     },
   ];
