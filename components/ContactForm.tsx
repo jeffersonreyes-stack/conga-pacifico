@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,12 +11,35 @@ export default function ContactForm() {
     phone: '',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission logic
-    setTimeout(() => setStatus('success'), 1000);
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Error al enviar el formulario');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Error desconocido');
+      console.error('Error:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -36,6 +59,24 @@ export default function ContactForm() {
           className="mt-6 text-green-700 font-semibold hover:underline"
         >
           Enviar otro mensaje
+        </button>
+      </div>
+    );
+  }
+
+  if (status === 'error') {
+    return (
+      <div className="bg-red-50 border border-red-200 rounded-xl p-10 text-center shadow-lg max-w-2xl mx-auto">
+        <AlertCircle className="w-16 h-16 text-red-600 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold text-red-800 mb-2">Error al Enviar</h3>
+        <p className="text-red-700 mb-6">
+          {errorMessage || 'Ocurrió un error al enviar su solicitud. Por favor, intente nuevamente.'}
+        </p>
+        <button
+          onClick={() => setStatus('idle')}
+          className="mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+        >
+          Intentar de nuevo
         </button>
       </div>
     );
@@ -117,10 +158,15 @@ export default function ContactForm() {
       <div className="text-center">
         <button
           type="submit"
-          className="bg-accent hover:bg-orange-600 text-white font-heading font-bold py-4 px-12 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center mx-auto"
+          disabled={status === 'loading'}
+          className={`${
+            status === 'loading'
+              ? 'bg-slate-400 cursor-not-allowed'
+              : 'bg-accent hover:bg-orange-600'
+          } text-white font-heading font-bold py-4 px-12 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center mx-auto`}
         >
           <Send className="w-5 h-5 mr-2" />
-          Enviar Solicitud
+          {status === 'loading' ? 'Enviando...' : 'Enviar Solicitud'}
         </button>
         <p className="mt-4 text-xs text-slate-500">
           Sus datos serán tratados confidencialmente bajo nuestra política de privacidad.
