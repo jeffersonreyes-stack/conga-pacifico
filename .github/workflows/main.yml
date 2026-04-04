@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - conga-landing-page-4884545659073798584
   workflow_dispatch:
 
 jobs:
