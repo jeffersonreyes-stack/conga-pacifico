@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '20'
 
       - name: Install Dependencies
         run: npm install
@@ -40,10 +40,10 @@ jobs:
         # CAMBIO: Usamos 'AWS_BUCKET_NAME' que es el secreto que sí tienes
         run: |
           aws s3 sync out/ s3://${{ secrets.AWS_BUCKET_NAME }} --delete
-
-      # ESTE PASO INVALIDA LA CACHÉ DE CLOUDFRONT PARA VER LOS CAMBIOS AL INSTANTE
-      - name: Invalidate CloudFront cache
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
-            --paths "/*"
+      # ESTE PASO FALLARÁ SI NO TIENES EL SECRETO 'CLOUDFRONT_ID'
+      # Si no usas CloudFront todavía, borra estas líneas de abajo:
+      # - name: Invalidate CloudFront cache
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
+      #       --paths "/*"
