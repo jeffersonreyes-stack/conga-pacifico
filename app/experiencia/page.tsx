@@ -7,11 +7,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  Play,
   ShieldCheck,
   Users,
   MapPin,
-  FileText,
   Award,
   ArrowRight,
 } from 'lucide-react';
@@ -123,60 +121,6 @@ export default function ExperienciaPage() {
               <div className="text-xs text-slate-500">{item.detalle}</div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1 bg-accent/20 text-accent rounded-full text-sm font-bold mb-4">
-              Video Documental
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              De Obra a Modelo de Negocio
-            </h2>
-            <p className="text-slate-300 text-lg max-w-3xl mx-auto">
-              Un recorrido visual por la ejecución del Convenio 0095: cómo transformamos la gestión
-              de arbolado urbano en un modelo replicable de excelencia operativa, seguridad y
-              compromiso comunitario.
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <video
-                controls
-                preload="metadata"
-                className="w-full aspect-video bg-black"
-                poster="/images/tala1.png"
-              >
-                <source
-                  src="https://d2ldmbozza14uy.cloudfront.net/video/De_Obra_a_Modelo_de_Negocio.mp4"
-                  type="video/mp4"
-                />
-                Tu navegador no soporta la reproducción de video.
-              </video>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-4 justify-center">
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm">
-                <Play size={16} className="text-accent" />
-                <span>Gestión de Arbolado Urbano</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm">
-                <ShieldCheck size={16} className="text-accent" />
-                <span>Seguridad y Salud en el Trabajo</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm">
-                <Users size={16} className="text-accent" />
-                <span>Socialización Comunitaria</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm">
-                <MapPin size={16} className="text-accent" />
-                <span>Georreferenciación GPS</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
