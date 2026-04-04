@@ -34,7 +34,8 @@ export default function Header() {
             { name: 'Inicio', path: '/' },
             { name: 'Servicios', path: '/servicios' },
             { name: 'Trazabilidad y Tecnología', path: '/tecnologia' },
-            { name: 'Experiencia', path: '/proyectos' },
+            { name: 'Experiencia', path: '/experiencia' },
+            { name: 'Proyectos', path: '/proyectos' },
           ].map((item) => (
             <Link
               key={item.name}
@@ -75,7 +76,8 @@ export default function Header() {
                 { name: 'Inicio', path: '/' },
                 { name: 'Servicios', path: '/servicios' },
                 { name: 'Trazabilidad y Tecnología', path: '/tecnologia' },
-                { name: 'Experiencia', path: '/proyectos' },
+                { name: 'Experiencia', path: '/experiencia' },
+                { name: 'Proyectos', path: '/proyectos' },
               ].map((item) => (
                 <Link
                   key={item.name}

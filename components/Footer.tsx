@@ -39,6 +39,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/servicios" className="hover:text-accent transition-colors">Servicios</Link></li>
               <li><Link href="/tecnologia" className="hover:text-accent transition-colors">Tecnología GIS</Link></li>
+              <li><Link href="/experiencia" className="hover:text-accent transition-colors">Experiencia</Link></li>
               <li><Link href="/proyectos" className="hover:text-accent transition-colors">Proyectos</Link></li>
               <li><Link href="/seguridad" className="hover:text-accent transition-colors">Seguridad</Link></li>
             </ul>
