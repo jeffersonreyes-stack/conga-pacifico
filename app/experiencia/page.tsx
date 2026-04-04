@@ -166,7 +166,7 @@ export default function ExperienciaPage() {
                 poster="/images/tala1.png"
               >
                 <source
-                  src="/presentaciones/De_Obra_a_Modelo_de_Negocio.mp4"
+                  src="https://d2ldmbozza14uy.cloudfront.net/video/De_Obra_a_Modelo_de_Negocio.mp4"
                   type="video/mp4"
                 />
                 Tu navegador no soporta la reproducción de video.
