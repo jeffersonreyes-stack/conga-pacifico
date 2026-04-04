@@ -8,9 +8,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Play,
-  TreePine,
   ShieldCheck,
-  BarChart3,
   Users,
   MapPin,
   FileText,
@@ -55,22 +53,10 @@ const propuestaSlides = [
 
 const resultados = [
   {
-    icon: TreePine,
-    valor: '141',
-    label: 'Árboles en Riesgo Intervenidos',
-    detalle: 'Comunas 11 y 20 de Santiago de Cali',
-  },
-  {
     icon: ShieldCheck,
     valor: '0',
     label: 'Accidentes de Trabajo',
     detalle: 'Estricto plan SST con EPP y protocolos',
-  },
-  {
-    icon: BarChart3,
-    valor: '84',
-    label: 'Nuevos Árboles Sembrados',
-    detalle: 'Especies nativas y frutales de reposición',
   },
   {
     icon: Users,
@@ -115,7 +101,7 @@ export default function ExperienciaPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {resultados.map((item, idx) => (
             <motion.div
               key={idx}
@@ -315,7 +301,7 @@ export default function ExperienciaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-accent text-white text-center">
+      <section className="py-20 bg-primary text-white text-center">
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             ¿Listo para trabajar con un socio estratégico?
@@ -326,7 +312,7 @@ export default function ExperienciaPage() {
           </p>
           <Link
             href="/contacto"
-            className="inline-block bg-white text-accent font-bold py-3 px-10 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+            className="inline-block bg-accent hover:bg-orange-600 text-white font-bold py-3 px-10 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
           >
             Solicitar Consulta
           </Link>
