@@ -36,14 +36,12 @@ jobs:
           aws-region: us-east-1
 
       - name: Sync files to S3 bucket
-        # CAMBIO: Usamos 'out/' porque ahí es donde Next.js pone tu página web real
-        # CAMBIO: Usamos 'AWS_BUCKET_NAME' que es el secreto que sí tienes
         run: |
           aws s3 sync out/ s3://${{ secrets.AWS_BUCKET_NAME }} --delete
-      # ESTE PASO FALLARÁ SI NO TIENES EL SECRETO 'CLOUDFRONT_ID'
-      # Si no usas CloudFront todavía, borra estas líneas de abajo:
-      # - name: Invalidate CloudFront cache
-      #   run: |
-      #     aws cloudfront create-invalidation \
-      #       --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
-      #       --paths "/*"
+
+      - name: Invalidate CloudFront cache
+        if: ${{ secrets.CLOUDFRONT_ID != '' }}
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
+            --paths "/*"
