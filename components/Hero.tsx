@@ -44,7 +44,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/servicios"
-              className="bg-accent hover:bg-orange-600 text-white font-heading font-bold py-4 px-8 rounded-md transition-all transform hover:-translate-y-1 shadow-lg text-center"
+              className="bg-accent hover:opacity-90 text-white font-heading font-bold py-4 px-8 rounded-md transition-all transform hover:-translate-y-1 shadow-lg text-center"
             >
               Conozca nuestras soluciones
             </Link>

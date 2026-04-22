@@ -256,7 +256,7 @@ export default function ExperienciaPage() {
           </p>
           <Link
             href="/contacto"
-            className="inline-block bg-accent hover:bg-orange-600 text-white font-bold py-3 px-10 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+            className="inline-block bg-accent hover:opacity-90 text-white font-bold py-3 px-10 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
           >
             Solicitar Consulta
           </Link>
