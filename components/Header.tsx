@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -10,13 +10,13 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white shadow-md transition-all duration-300 py-4">
+    <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md transition-all duration-300 py-4 shadow-md border-b border-slate-100">
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4 group">
-          <div className="relative h-20 w-20 md:h-24 md:w-24">
+          <div className="relative h-20 w-40 md:h-24 md:w-56">
             <Image
-              src="/images/logo-blanco.jpeg"
+              src="/images/logo.png"
               alt="CONGA PACIFICO Logo"
               fill
               className="object-contain"
@@ -55,10 +55,10 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-primary hover:text-accent"
+          className="md:hidden text-primary"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} color="#1B4D3E" />}
+          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
@@ -82,7 +82,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className="font-heading font-medium text-primary hover:text-accent"
+                  className="font-heading font-medium text-slate-800 hover:text-accent"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

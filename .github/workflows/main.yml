@@ -40,7 +40,7 @@ jobs:
           aws s3 sync out/ s3://${{ secrets.AWS_BUCKET_NAME }} --delete --exclude "video/*"
 
       - name: Invalidate CloudFront cache
-        if: ${{ secrets.CLOUDFRONT_ID != '' }}
+        if: secrets.CLOUDFRONT_ID != ''
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_ID }} \
