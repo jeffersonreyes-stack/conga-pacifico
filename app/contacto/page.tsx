@@ -1,5 +1,4 @@
 import SecondaryHero from '@/components/SecondaryHero';
-import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
@@ -85,7 +84,6 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

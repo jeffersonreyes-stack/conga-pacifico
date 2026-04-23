@@ -53,9 +53,9 @@ export default function TramitesAmbientalesPage() {
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Instrumentos de Manejo (DAA/PMA)</h3>
+                  <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Licencias e Instrumentos de Manejo (DAA/PMA)</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Elaboración y actualización de Diagnósticos Ambientales de Alternativas y Planes de Manejo Ambiental, blindando su proyecto desde la fase de planificación.
+                    Gestión integral para la obtención y modificación de Licencias Ambientales. Elaboración y actualización de Diagnósticos Ambientales de Alternativas y Planes de Manejo Ambiental, además del desarrollo de actividades de cumplimiento derivadas de las licencias.
                   </p>
                 </div>
               </div>

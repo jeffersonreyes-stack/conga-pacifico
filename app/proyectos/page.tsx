@@ -1,5 +1,4 @@
 import SecondaryHero from '@/components/SecondaryHero';
-import Footer from '@/components/Footer';
 import Image from 'next/image';
 
 export default function ProyectosPage() {
@@ -89,7 +88,6 @@ export default function ProyectosPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

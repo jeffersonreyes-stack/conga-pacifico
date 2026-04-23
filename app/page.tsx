@@ -4,7 +4,6 @@ import DifferentiationGrid from "@/components/DifferentiationGrid";
 import ServicesGrid from "@/components/ServicesGrid";
 import TechEvidence from "@/components/TechEvidence";
 import LeadMagnet from "@/components/LeadMagnet";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <ServicesGrid />
       <TechEvidence />
       <LeadMagnet />
-      <Footer />
     </main>
   );
 }
