@@ -53,7 +53,7 @@ export default function ServicesGrid() {
               Desde el trámite legal hasta la ejecución en campo, cubrimos todo el ciclo de vida ambiental de su proyecto.
             </p>
           </div>
-          <button className="hidden md:flex items-center text-accent font-bold hover:text-orange-700 transition-colors mt-4 md:mt-0">
+          <button className="hidden md:flex items-center text-accent font-bold hover:opacity-80 transition-colors mt-4 md:mt-0">
             Ver todos los servicios <ArrowRight className="ml-2 w-5 h-5" />
           </button>
         </div>
@@ -104,7 +104,7 @@ export default function ServicesGrid() {
         </div>
 
         <div className="mt-8 text-center md:hidden">
-          <button className="inline-flex items-center text-accent font-bold hover:text-orange-700 transition-colors">
+          <button className="inline-flex items-center text-accent font-bold hover:opacity-80 transition-colors">
             Ver todos los servicios <ArrowRight className="ml-2 w-5 h-5" />
           </button>
         </div>

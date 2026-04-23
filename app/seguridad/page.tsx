@@ -15,7 +15,7 @@ export default function SeguridadPage() {
 
           {/* Block 1 */}
           <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 text-accent">
+            <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-6 text-accent">
               <HardHat size={32} />
             </div>
             <h3 className="text-xl font-heading font-bold text-primary mb-4">Planificación para la Mitigación de Riesgos</h3>
@@ -37,7 +37,7 @@ export default function SeguridadPage() {
 
           {/* Block 3 */}
           <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 text-accent">
+            <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-6 text-accent">
               <Activity size={32} />
             </div>
             <h3 className="text-xl font-heading font-bold text-primary mb-4">Resultados que Generan Confianza</h3>

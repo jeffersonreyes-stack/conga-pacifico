@@ -163,7 +163,7 @@ export default function ContactForm() {
           className={`${
             status === 'loading'
               ? 'bg-slate-400 cursor-not-allowed'
-              : 'bg-accent hover:bg-orange-600'
+              : 'bg-accent hover:opacity-90'
           } text-white font-heading font-bold py-4 px-12 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center mx-auto`}
         >
           <Send className="w-5 h-5 mr-2" />

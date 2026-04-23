@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -10,20 +10,20 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md transition-all duration-300 py-4 shadow-md">
+    <header className="fixed top-0 w-full z-50 bg-white shadow-md transition-all duration-300 py-4">
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4 group">
           <div className="relative h-20 w-20 md:h-24 md:w-24">
             <Image
-              src="/images/logo-conga-dark-2.png"
+              src="/images/logo-blanco.jpeg"
               alt="CONGA PACIFICO Logo"
               fill
               className="object-contain"
               priority
             />
           </div>
-          <span className="font-heading font-bold text-white text-xl md:text-3xl group-hover:text-accent transition-colors tracking-tight">
+          <span className="font-heading font-bold text-primary text-xl md:text-3xl group-hover:text-accent transition-colors tracking-tight">
             CONGA PACIFICO
           </span>
         </Link>
@@ -40,14 +40,14 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.path}
-              className="font-heading font-semibold text-white hover:text-accent transition-colors"
+              className="font-heading font-semibold text-primary hover:text-accent transition-colors"
             >
               {item.name}
             </Link>
           ))}
           <Link
             href="/contacto"
-            className="bg-accent hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg"
+            className="bg-accent hover:opacity-90 text-white font-bold py-2 px-6 rounded-md transition-all transform hover:-translate-y-0.5 shadow-lg"
           >
             Contacto
           </Link>
@@ -55,10 +55,10 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-accent"
+          className="md:hidden text-primary hover:text-accent"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} color="#FFFFFF" />}
+          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} color="#1B4D3E" />}
         </button>
       </div>
 
@@ -82,7 +82,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.path}
-                  className="font-heading font-medium text-slate-800 hover:text-accent"
+                  className="font-heading font-medium text-primary hover:text-accent"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

@@ -13,7 +13,7 @@ export default function LeadMagnet() {
         <div className="flex justify-center">
           <Link
              href="/contacto"
-             className="bg-accent hover:bg-orange-600 text-white font-heading font-bold py-4 px-10 rounded-md transition-all transform hover:-translate-y-1 shadow-lg text-lg"
+             className="bg-accent hover:opacity-90 text-white font-heading font-bold py-4 px-10 rounded-md transition-all transform hover:-translate-y-1 shadow-lg text-lg"
            >
              Hable con un especialista
            </Link>
