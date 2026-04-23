@@ -11,9 +11,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative h-10 w-10">
+              <div className="relative h-16 w-28 bg-white/10 rounded p-1">
                 <Image
-                  src="/images/logo-conga-dark-2.png"
+                  src="/images/logo.png"
                   alt="CONGA PACIFICO"
                   fill
                   className="object-contain"

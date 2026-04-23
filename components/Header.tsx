@@ -14,9 +14,9 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4 group">
-          <div className="relative h-20 w-20 md:h-24 md:w-24">
+          <div className="relative h-20 w-40 md:h-24 md:w-56">
             <Image
-              src="/images/logo-conga-dark-2.png"
+              src="/images/logo.png"
               alt="CONGA PACIFICO Logo"
               fill
               className="object-contain"
