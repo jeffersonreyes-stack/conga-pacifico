@@ -1,7 +1,6 @@
 'use client';
 
 import SecondaryHero from '@/components/SecondaryHero';
-import Footer from '@/components/Footer';
 import PresentationViewer from '@/components/PresentationViewer';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -263,7 +262,6 @@ export default function ExperienciaPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

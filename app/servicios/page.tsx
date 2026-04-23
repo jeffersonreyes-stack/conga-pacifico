@@ -1,7 +1,6 @@
 import SecondaryHero from '@/components/SecondaryHero';
 import Link from 'next/link';
 import ServiceCard from '@/components/ServiceCard';
-import Footer from '@/components/Footer';
 import LeadMagnet from '@/components/LeadMagnet';
 
 export default function ServiciosPage() {
@@ -55,7 +54,6 @@ export default function ServiciosPage() {
       </section>
 
       <LeadMagnet />
-      <Footer />
     </main>
   );
 }

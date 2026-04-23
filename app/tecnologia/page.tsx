@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import TechEvidence from '@/components/TechEvidence';
 import { MapPin, ShieldCheck, FileCheck } from 'lucide-react';
 
@@ -61,7 +60,6 @@ export default function TecnologiaPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

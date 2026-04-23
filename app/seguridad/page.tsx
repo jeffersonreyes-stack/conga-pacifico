@@ -1,5 +1,4 @@
 import SecondaryHero from '@/components/SecondaryHero';
-import Footer from '@/components/Footer';
 import { ShieldCheck, HardHat, Activity } from 'lucide-react';
 
 export default function SeguridadPage() {
@@ -49,7 +48,6 @@ export default function SeguridadPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

@@ -41,7 +41,6 @@ export default function Footer() {
               <li><Link href="/tecnologia" className="hover:text-accent transition-colors">Tecnología GIS</Link></li>
               <li><Link href="/experiencia" className="hover:text-accent transition-colors">Experiencia</Link></li>
               <li><Link href="/proyectos" className="hover:text-accent transition-colors">Proyectos</Link></li>
-              <li><Link href="/seguridad" className="hover:text-accent transition-colors">Seguridad</Link></li>
             </ul>
           </div>
 
